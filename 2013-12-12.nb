@@ -1,0 +1,571 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     21170,        562]
+NotebookOptionsPosition[     20265,        529]
+NotebookOutlinePosition[     20620,        545]
+CellTagsIndexPosition[     20577,        542]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Unprotect", "[", "Intersection", "]"}], ";", 
+  RowBox[{"Clear", "[", "Intersection", "]"}]}]], "Input",
+ CellChangeTimes->{{3.595814254641899*^9, 3.59581426342985*^9}, {
+  3.595815029946827*^9, 3.595815030337397*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"definition", "[", "IsOpen", "]"}], ":=", 
+  RowBox[{"Function", "[", 
+   RowBox[{
+    RowBox[{"{", "X", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"forAll", "[", 
+     RowBox[{"x", ",", 
+      RowBox[{
+       RowBox[{"x", "\[Element]", "X"}], "\[Implies]", 
+       RowBox[{"exists", "[", 
+        RowBox[{"\[Delta]", ",", 
+         RowBox[{"forAll", "[", 
+          RowBox[{"y", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"d", "[", 
+              RowBox[{"x", ",", "y"}], "]"}], "<", "\[Delta]"}], "\[Implies]", 
+            RowBox[{"y", "\[Element]", "X"}]}]}], "]"}]}], "]"}]}]}], "]"}]}],
+    "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.5958141560533323`*^9, 3.5958142162527227`*^9}, {
+  3.5958153399502563`*^9, 3.5958153441636467`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hypothesisCounter", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nextHypothesisNumber", ":=", 
+   RowBox[{"hypothesisCounter", "++"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", "[", "]"}], ":=", 
+  RowBox[{"H", "[", "nextHypothesisNumber", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5958146092662687`*^9, 3.5958146529532413`*^9}, {
+  3.5958157360162*^9, 3.595815754204816*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"targetCounter", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nextTargetNumber", ":=", 
+   RowBox[{"targetCounter", "++"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "[", "]"}], ":=", 
+  RowBox[{"T", "[", "nextTargetNumber", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5958146092662687`*^9, 3.5958146529532413`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"ProofStep", ",", "Prove"}], "]"}]], "Input",
+ CellChangeTimes->{{3.595816056247487*^9, 3.5958160576182137`*^9}, 
+   3.595816615810998*^9, {3.595817010324218*^9, 3.595817010911459*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProofStep", "[", 
+   RowBox[{"goal", ":", 
+    RowBox[{"ProofGoal", "[", 
+     RowBox[{"hypotheses_List", ",", 
+      RowBox[{"{", 
+       RowBox[{"Ta___", ",", 
+        RowBox[{
+         RowBox[{"T", "[", "i_", "]"}], "\[Rule]", 
+         RowBox[{"IsOpen", "[", "X_", "]"}]}], ",", "Tb___"}], "}"}]}], 
+     "]"}]}], "]"}], ":=", 
+  RowBox[{"ProofStep", "[", 
+   RowBox[{"goal", ",", 
+    RowBox[{"\"\<Expand pre-universal target T\>\"", "<>", 
+     RowBox[{"ToString", "[", "i", "]"}]}], ",", "\"\<\>\"", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ProofGoal", "[", 
+     RowBox[{"hypotheses", ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"Ta", ",", "Tb", ",", 
+        RowBox[{
+         RowBox[{"T", "[", "]"}], "\[Rule]", 
+         RowBox[{
+          RowBox[{"definition", "[", "IsOpen", "]"}], "[", "X", "]"}]}]}], 
+       "}"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.595814498484351*^9, 3.59581457315106*^9}, {
+  3.595814657594615*^9, 3.595814659247044*^9}, {3.595814862455468*^9, 
+  3.595814870436385*^9}, {3.59581544034166*^9, 3.595815480427747*^9}, {
+  3.5958166101552067`*^9, 3.595816612016342*^9}, {3.59581698299196*^9, 
+  3.595816985041644*^9}, {3.595817287069539*^9, 3.595817292230298*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProofStep", "[", 
+   RowBox[{"goal", ":", 
+    RowBox[{"ProofGoal", "[", 
+     RowBox[{"hypotheses_List", ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"Ta___", ",", 
+        RowBox[{
+         RowBox[{"T", "[", "i_", "]"}], "\[Rule]", 
+         RowBox[{"forAll", "[", 
+          RowBox[{"x_", ",", 
+           RowBox[{"P_", "\[Implies]", "Q_"}]}], "]"}]}], ",", "Tb___"}], 
+       "}"}]}], "]"}]}], "]"}], ":=", 
+  RowBox[{"ProofStep", "[", 
+   RowBox[{"goal", ",", 
+    RowBox[{
+    "\"\<Apply the `let' trick and move premise of universal-condition target \
+T\>\"", "<>", 
+     RowBox[{"ToString", "[", "i", "]"}], "<>", "\"\< above the line.\>\""}], 
+    ",", 
+    RowBox[{"\"\<Let \>\"", "<>", 
+     RowBox[{"texString", "[", "P", "]"}]}], ",", 
+    RowBox[{"ProofGoal", "[", 
+     RowBox[{
+      RowBox[{"hypotheses", "~", "Join", "~", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"H", "[", "]"}], "\[Rule]", "P"}], "}"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"T", "[", "]"}], "\[Rule]", "Q"}], ",", "Ta", ",", "Tb"}], 
+       "}"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.595814718700018*^9, 3.595814923914349*^9}, {
+   3.5958153804341383`*^9, 3.595815380513587*^9}, {3.595815453788468*^9, 
+   3.595815486164075*^9}, {3.595815523082206*^9, 3.595815531411374*^9}, 
+   3.5958166188788977`*^9, {3.595816913842226*^9, 3.5958169161841307`*^9}, {
+   3.595816974137295*^9, 3.595816989843709*^9}, {3.595817295302731*^9, 
+   3.595817298798168*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProofStep", "[", 
+   RowBox[{"goal", ":", 
+    RowBox[{"ProofGoal", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Ha___", ",", 
+        RowBox[{
+         RowBox[{"H", "[", "i_", "]"}], "\[Rule]", 
+         RowBox[{"x_", "\[Element]", 
+          RowBox[{"intersect", "[", 
+           RowBox[{"A_", ",", "B_"}], "]"}]}]}], ",", "Hb___"}], "}"}], ",", 
+      "targets_"}], "]"}]}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"ProofStep", "[", 
+   RowBox[{"goal", ",", 
+    RowBox[{"\"\<Quantifier-free expansion of hypothesis H\>\"", "<>", 
+     RowBox[{"ToString", "[", "i", "]"}]}], ",", 
+    RowBox[{"\"\<Since \>\"", "<>", 
+     RowBox[{"texString", "[", 
+      RowBox[{"x", "\[Element]", 
+       RowBox[{"intersect", "[", 
+        RowBox[{"A", ",", "B"}], "]"}]}], "]"}], "<>", "\"\<, \>\"", "<>", 
+     RowBox[{"texString", "[", 
+      RowBox[{"x", "\[Element]", "A"}], "]"}], "<>", "\"\< and \>\"", "<>", 
+     RowBox[{"texString", "[", 
+      RowBox[{"x", "\[Element]", "B"}], "]"}], "<>", "\"\<.\>\""}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ProofGoal", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Ha", ",", 
+        RowBox[{
+         RowBox[{"H", "[", "]"}], "\[Rule]", 
+         RowBox[{"x", "\[Element]", "A"}]}], ",", 
+        RowBox[{
+         RowBox[{"H", "[", "]"}], "\[Rule]", 
+         RowBox[{"x", "\[Element]", "B"}]}], ",", "Hb"}], "}"}], ",", 
+      "targets"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.595816257444078*^9, 3.59581637895026*^9}, {
+  3.59581649059472*^9, 3.595816556248074*^9}, {3.5958166200042353`*^9, 
+  3.595816665021069*^9}, {3.595817303789612*^9, 3.595817308353537*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProofStep", "[", "goal_ProofGoal", "]"}], ":=", 
+  "$Failed"}]], "Input",
+ CellChangeTimes->{{3.595817744519877*^9, 3.5958177763988523`*^9}, {
+  3.595817842252821*^9, 3.595817843617365*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Prove", "[", "goal_ProofGoal", "]"}], ":=", 
+  RowBox[{"Prove", "[", 
+   RowBox[{"PartialProof", "[", 
+    RowBox[{"ProofStep", "[", "goal", "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Prove", "[", 
+   RowBox[{"proof", ":", 
+    RowBox[{"PartialProof", "[", 
+     RowBox[{"___", ",", "$Failed"}], "]"}]}], "]"}], ":=", "proof"}], "\n", 
+ RowBox[{
+  RowBox[{"Prove", "[", "proof_PartialProof", "]"}], ":=", 
+  RowBox[{"Prove", "[", 
+   RowBox[{"Append", "[", 
+    RowBox[{"proof", ",", 
+     RowBox[{"ProofStep", "[", 
+      RowBox[{"proof", "\[LeftDoubleBracket]", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], "]"}]}], "]"}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5958166699778223`*^9, 3.59581672530406*^9}, {
+   3.595816757288637*^9, 3.595816820979979*^9}, {3.5958173132717533`*^9, 
+   3.595817398976836*^9}, {3.5958174778419113`*^9, 3.595817502874645*^9}, {
+   3.595817539050746*^9, 3.595817541438314*^9}, 3.595817580121958*^9, {
+   3.595817729791098*^9, 3.5958177311289053`*^9}, {3.59581782373263*^9, 
+   3.5958178530268087`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"texString", "[", 
+   RowBox[{"x_", "\[Element]", "Z_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"texString", "[", "x", "]"}], "<>", "\"\< is an element of \>\"", "<>", 
+   RowBox[{"texString", "[", "Z", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"texString", "[", "x_Symbol", "]"}], ":=", 
+  RowBox[{"\"\<\\\\ensuremath{\>\"", "<>", 
+   RowBox[{"SymbolName", "[", "x", "]"}], "<>", 
+   "\"\<}\>\""}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"texString", "[", 
+   RowBox[{"intersect", "[", 
+    RowBox[{"A_", ",", "B_"}], "]"}], "]"}], ":=", 
+  RowBox[{"\"\<\\\\ensuremath{\>\"", "<>", 
+   RowBox[{"texString", "[", "A", "]"}], "<>", "\"\<\\\\cap \>\"", "<>", 
+   RowBox[{"texString", "[", "B", "]"}], "<>", "\"\<}\>\""}]}]}], "Input",
+ CellChangeTimes->{{3.5958155353874187`*^9, 3.595815692515217*^9}, {
+   3.5958158776638002`*^9, 3.595815879292645*^9}, {3.595816439677205*^9, 
+   3.595816478564774*^9}, 3.595816829206883*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"proof", "=", 
+  RowBox[{"Prove", "[", 
+   RowBox[{"ProofGoal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"H", "[", "]"}], "\[Rule]", 
+        RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"H", "[", "]"}], "\[Rule]", 
+        RowBox[{"IsOpen", "[", "B", "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"T", "[", "]"}], "\[Rule]", 
+       RowBox[{"IsOpen", "[", 
+        RowBox[{"intersect", "[", 
+         RowBox[{"A", ",", "B"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.595813458937801*^9, 3.595813543148622*^9}, {
+   3.595813899468594*^9, 3.595813905003512*^9}, {3.595813990581974*^9, 
+   3.595814009835091*^9}, {3.59581429367336*^9, 3.5958142940137243`*^9}, {
+   3.595814579288575*^9, 3.595814579703355*^9}, 3.5958146825703297`*^9, {
+   3.595814940233708*^9, 3.5958149435275173`*^9}, {3.595815363941575*^9, 
+   3.595815396657464*^9}, {3.595815490348063*^9, 3.595815492729594*^9}, {
+   3.595815716553133*^9, 3.595815729427124*^9}, {3.595815864767871*^9, 
+   3.595815866034567*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PartialProof", "[", 
+  RowBox[{
+   RowBox[{"ProofStep", "[", 
+    RowBox[{
+     RowBox[{"ProofGoal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", "52", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "53", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "B", "]"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"T", "[", "66", "]"}], "\[Rule]", 
+         RowBox[{"IsOpen", "[", 
+          RowBox[{"intersect", "[", 
+           RowBox[{"A", ",", "B"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+     ",", "\<\"Expand pre-universal target T66\"\>", ",", "\<\"\"\>", ",", 
+     RowBox[{"ProofGoal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", "52", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "53", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "B", "]"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"T", "[", "67", "]"}], "\[Rule]", 
+         RowBox[{"forAll", "[", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"x", "\[Element]", 
+             RowBox[{"intersect", "[", 
+              RowBox[{"A", ",", "B"}], "]"}]}], "\[Implies]", 
+            RowBox[{"exists", "[", 
+             RowBox[{"\[Delta]", ",", 
+              RowBox[{"forAll", "[", 
+               RowBox[{"y", ",", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"d", "[", 
+                   RowBox[{"x", ",", "y"}], "]"}], "<", "\[Delta]"}], 
+                 "\[Implies]", 
+                 RowBox[{"y", "\[Element]", 
+                  RowBox[{"intersect", "[", 
+                   RowBox[{"A", ",", "B"}], "]"}]}]}]}], "]"}]}], "]"}]}]}], 
+          "]"}]}], "}"}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"ProofStep", "[", 
+    RowBox[{
+     RowBox[{"ProofGoal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", "52", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "53", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "B", "]"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"T", "[", "67", "]"}], "\[Rule]", 
+         RowBox[{"forAll", "[", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"x", "\[Element]", 
+             RowBox[{"intersect", "[", 
+              RowBox[{"A", ",", "B"}], "]"}]}], "\[Implies]", 
+            RowBox[{"exists", "[", 
+             RowBox[{"\[Delta]", ",", 
+              RowBox[{"forAll", "[", 
+               RowBox[{"y", ",", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"d", "[", 
+                   RowBox[{"x", ",", "y"}], "]"}], "<", "\[Delta]"}], 
+                 "\[Implies]", 
+                 RowBox[{"y", "\[Element]", 
+                  RowBox[{"intersect", "[", 
+                   RowBox[{"A", ",", "B"}], "]"}]}]}]}], "]"}]}], "]"}]}]}], 
+          "]"}]}], "}"}]}], "]"}], 
+     ",", "\<\"Apply the `let' trick and move premise of universal-condition \
+target T67 above the line.\"\>", 
+     ",", "\<\"Let \\\\ensuremath{x} is an element of \
+\\\\ensuremath{\\\\ensuremath{A}\\\\cap \\\\ensuremath{B}}\"\>", ",", 
+     RowBox[{"ProofGoal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", "52", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "53", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "B", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "54", "]"}], "\[Rule]", 
+          RowBox[{"x", "\[Element]", 
+           RowBox[{"intersect", "[", 
+            RowBox[{"A", ",", "B"}], "]"}]}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"T", "[", "68", "]"}], "\[Rule]", 
+         RowBox[{"exists", "[", 
+          RowBox[{"\[Delta]", ",", 
+           RowBox[{"forAll", "[", 
+            RowBox[{"y", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"d", "[", 
+                RowBox[{"x", ",", "y"}], "]"}], "<", "\[Delta]"}], 
+              "\[Implies]", 
+              RowBox[{"y", "\[Element]", 
+               RowBox[{"intersect", "[", 
+                RowBox[{"A", ",", "B"}], "]"}]}]}]}], "]"}]}], "]"}]}], 
+        "}"}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"ProofStep", "[", 
+    RowBox[{
+     RowBox[{"ProofGoal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", "52", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "53", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "B", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "54", "]"}], "\[Rule]", 
+          RowBox[{"x", "\[Element]", 
+           RowBox[{"intersect", "[", 
+            RowBox[{"A", ",", "B"}], "]"}]}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"T", "[", "68", "]"}], "\[Rule]", 
+         RowBox[{"exists", "[", 
+          RowBox[{"\[Delta]", ",", 
+           RowBox[{"forAll", "[", 
+            RowBox[{"y", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"d", "[", 
+                RowBox[{"x", ",", "y"}], "]"}], "<", "\[Delta]"}], 
+              "\[Implies]", 
+              RowBox[{"y", "\[Element]", 
+               RowBox[{"intersect", "[", 
+                RowBox[{"A", ",", "B"}], "]"}]}]}]}], "]"}]}], "]"}]}], 
+        "}"}]}], "]"}], 
+     ",", "\<\"Quantifier-free expansion of hypothesis H54\"\>", 
+     ",", "\<\"Since \\\\ensuremath{x} is an element of \
+\\\\ensuremath{\\\\ensuremath{A}\\\\cap \\\\ensuremath{B}}, \\\\ensuremath{x} \
+is an element of \\\\ensuremath{A} and \\\\ensuremath{x} is an element of \
+\\\\ensuremath{B}.\"\>", ",", 
+     RowBox[{"ProofGoal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"H", "[", "52", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "A", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "53", "]"}], "\[Rule]", 
+          RowBox[{"IsOpen", "[", "B", "]"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "55", "]"}], "\[Rule]", 
+          RowBox[{"x", "\[Element]", "A"}]}], ",", 
+         RowBox[{
+          RowBox[{"H", "[", "56", "]"}], "\[Rule]", 
+          RowBox[{"x", "\[Element]", "B"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"T", "[", "68", "]"}], "\[Rule]", 
+         RowBox[{"exists", "[", 
+          RowBox[{"\[Delta]", ",", 
+           RowBox[{"forAll", "[", 
+            RowBox[{"y", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"d", "[", 
+                RowBox[{"x", ",", "y"}], "]"}], "<", "\[Delta]"}], 
+              "\[Implies]", 
+              RowBox[{"y", "\[Element]", 
+               RowBox[{"intersect", "[", 
+                RowBox[{"A", ",", "B"}], "]"}]}]}]}], "]"}]}], "]"}]}], 
+        "}"}]}], "]"}]}], "]"}], ",", "$Failed"}], "]"}]], "Output",
+ CellChangeTimes->{{3.5958142357847843`*^9, 3.5958142950705137`*^9}, 
+   3.595814580089518*^9, {3.595814661311962*^9, 3.5958146884529*^9}, {
+   3.595814931218569*^9, 3.595814944321203*^9}, 3.5958150442762403`*^9, {
+   3.595815371874898*^9, 3.5958153970763683`*^9}, 3.595815493643776*^9, {
+   3.5958156764294653`*^9, 3.595815717236558*^9}, 3.595815757214432*^9, {
+   3.5958158663791733`*^9, 3.5958158828406773`*^9}, 3.595815976848927*^9, 
+   3.5958167026470757`*^9, 3.595816835717019*^9, {3.5958169204662333`*^9, 
+   3.595816929574695*^9}, {3.5958169973935823`*^9, 3.59581701532655*^9}, {
+   3.595817402169778*^9, 3.595817423843858*^9}, 3.595817586608014*^9, 
+   3.595817734510633*^9, {3.595817860636675*^9, 3.5958178680599737`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tex", "[", 
+   RowBox[{"ProofStep", "[", 
+    RowBox[{"_", ",", "_", ",", "tex_String", ",", "_"}], "]"}], "]"}], ":=", 
+  
+  RowBox[{"tex", "<>", "\"\<\\n\>\""}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tex", "[", "p_PartialProof", "]"}], ":=", 
+  RowBox[{"StringJoin", "@@", 
+   RowBox[{"(", 
+    RowBox[{"tex", "/@", 
+     RowBox[{"(", 
+      RowBox[{"List", "@@", "p"}], ")"}]}], 
+    ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tex", "[", "$Failed", "]"}], ":=", 
+  "\"\<It seems we're stuck.\>\""}]}], "Input",
+ CellChangeTimes->{{3.595817659670772*^9, 3.5958176849229107`*^9}, {
+  3.595817883212571*^9, 3.595817924112804*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tex", "[", "proof", "]"}]], "Input",
+ CellChangeTimes->{{3.595815884660406*^9, 3.5958158870803556`*^9}, {
+  3.595817902763073*^9, 3.595817903428421*^9}}],
+
+Cell[BoxData["\<\"\\nLet \\\\ensuremath{x} is an element of \\\\ensuremath{\\\
+\\ensuremath{A}\\\\cap \\\\ensuremath{B}}\\nSince \\\\ensuremath{x} is an \
+element of \\\\ensuremath{\\\\ensuremath{A}\\\\cap \\\\ensuremath{B}}, \
+\\\\ensuremath{x} is an element of \\\\ensuremath{A} and \\\\ensuremath{x} is \
+an element of \\\\ensuremath{B}.\\nIt seems we're stuck.\"\>"], "Output",
+ CellChangeTimes->{
+  3.595815887671239*^9, 3.5958159790359*^9, 3.595816852930767*^9, 
+   3.595817020436966*^9, {3.595817903972445*^9, 3.595817928273218*^9}}]
+}, Open  ]]
+},
+WindowSize->{1167, 682},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 253, 5, 28, "Input"],
+Cell[813, 27, 825, 21, 63, "Input"],
+Cell[1641, 50, 447, 10, 63, "Input"],
+Cell[2091, 62, 384, 9, 63, "Input"],
+Cell[2478, 73, 233, 4, 28, "Input"],
+Cell[2714, 79, 1274, 30, 80, "Input"],
+Cell[3991, 111, 1563, 39, 80, "Input"],
+Cell[5557, 152, 1689, 41, 80, "Input"],
+Cell[7249, 195, 225, 5, 28, "Input"],
+Cell[7477, 202, 1168, 28, 63, "Input"],
+Cell[8648, 232, 977, 21, 63, "Input"],
+Cell[CellGroupData[{
+Cell[9650, 257, 1140, 27, 28, "Input"],
+Cell[10793, 286, 8008, 202, 216, "Output"]
+}, Open  ]],
+Cell[18816, 491, 688, 19, 63, "Input"],
+Cell[CellGroupData[{
+Cell[19529, 514, 177, 3, 28, "Input"],
+Cell[19709, 519, 540, 7, 97, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
